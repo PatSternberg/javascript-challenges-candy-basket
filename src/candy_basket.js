@@ -1,3 +1,5 @@
+// src/candy_basket.js
+
 // Objectives
 // Test-drive a complex function.
 
@@ -18,6 +20,13 @@ const candies = [
   { name: 'Gummi bears', price: 10.99 },
   { name: 'Fraise Tagada', price: 5.99 }
 ];
+
+const var1 = 3;
+const var2 = (n) => {
+  return n * 2;
+};
+
+module.exports = { var1, var2 };
 
 // You can notice the shape is similar to what you've worked with before — an array of objects,
 // each object having two properties name and price.
