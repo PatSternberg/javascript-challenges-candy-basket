@@ -5,28 +5,31 @@
 
 // We're being given the following array:
 
-const candies = [
-  { name: 'Aero', price: 1.99 },
-  { name: 'Skitties', price: 2.99 },
-  { name: 'Mars', price: 1.49 },
-  { name: 'Maltesers', price: 3.49 },
-  { name: 'Skittles', price: 1.49 },
-  { name: 'Starburst', price: 5.99 },
-  { name: 'Ricola', price: 1.99 },
-  { name: 'Polkagris', price: 5.99 },
-  { name: 'Pastila', price: 4.99 },
-  { name: 'Mentos', price: 8.99 },
-  { name: 'Raffaello', price: 7.99 },
-  { name: 'Gummi bears', price: 10.99 },
-  { name: 'Fraise Tagada', price: 5.99 }
-];
+// const var1 = 3;
+// const var2 = (n) => {
+//   return n * 2;
+// };
 
-const var1 = 3;
-const var2 = (n) => {
-  return n * 2;
+class Candies {
+
+  constructor(candies) {
+    this.candies = candies
+  };
+  
+  searchCandies = (name, price) => {
+    const filterByPrice = (candy) => {
+      if ((candy.price < price) && candy.name.startsWith(name)) {
+        return true;
+      } else {
+        return false;
+      };
+    };
+    const filteredCandies = this.candies.filter(filterByPrice);
+    return filteredCandies.map(candy => candy.name);
+  };
 };
 
-module.exports = { var1, var2 };
+module.exports = { Candies };
 
 // You can notice the shape is similar to what you've worked with before — an array of objects,
 // each object having two properties name and price.
