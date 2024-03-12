@@ -32,7 +32,6 @@ const candies = new Candies([
 
 
 // 
-
 console.log(candies.searchCandies('Ma', 10));
 // [ 'Mars', 'Maltesers' ]
 
@@ -59,3 +58,6 @@ describe('searchCandiesTests', () => {
     expect(candies.searchCandies('S', 4)).toEqual([ 'Skitties', 'Skittles' ])
   });
 });
+
+// Received error initially when using toBe instead of toEqual:
+// Received: serializes to the same string
